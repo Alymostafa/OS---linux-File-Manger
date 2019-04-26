@@ -1,0 +1,16 @@
+/" Manpage for your_fonction
+.TH man 1 "10 September 2017" "1.0" "your_fonction man page"
+.SH NAME
+your_fonction - do.... 
+.SH SYNOPSIS
+your_fonction [optionnal argument] [optionnal argument]
+.SH DESCRIPTION
+your_fonction is a function which .....
+.SH OPTIONS
+your_fonction does not take any options
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+written by your_name (your_website or your_github or whatever)
+.SH REPORTING BUGS
+you_github_repository/isssues for example

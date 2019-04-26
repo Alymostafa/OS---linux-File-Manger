@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+import os
+import sys
+myhost = os.uname()[1]
+z=1 
+flag = 0
+while z:
+ print ("A. List Files/directories.")
+ print ("B. Change permissions of files.")
+ print ("C. Make / delete files/directories.")
+ print ("D. Create symbolic link files")
+ print ("0. Exit")
+ print("Please Enter Your Command")
+ x = input()
+
+ if x=='-h'or x=='--h'or x=='-help':
+    f=open("help.txt","r")
+    contents=f.read()
+    print(contents)
+    flag =1
+
+ if x=='a'or x=='A':
+    print("1. Currnet Directory\n")
+    print("2. Other Directory\n")
+    m = input()
+    if m=='1':
+       os.system('ls')
+       flag =1
+    if m=='2':
+       dire = input("Enter Directory\n")
+       os.system('ls'+dire)
+       flag =1
+ 
+ if x=='b'or x=='B':	
+    print("\n 0-no permission\n 1-excute only\n 2-write\n 3-write & excute\n 4-read only\n 5-read&excute\n 6-read&write\n 7- read & write & excute\n")
+    print("Enter Choices 1-")
+    a = input()
+    print("Enter Choices 2-")
+    b = input()
+    print("Enter Choices 3-")
+    c = input()
+    print("Enter Directory")
+    d = input()
+    os.system('chmod'+' '+a+b+c+' '+d)
+    flag = 1
+   
+ if x=='c'or x=='C':
+    print("1-Make File\n")
+    print("2-Delete File\n")
+    print("3-Make Directory\n")
+    print("4-Delete Directory\n")
+    print("5-Back\n")
+    choice = input()
+    if choice == '1':
+       fn = input("Enter File Name\n")
+       os.system("touch " +fn)
+    if choice == '2':
+       fn = input("Enter File Name\n")
+       os.system("rm " +fn)
+    if choice == '3':
+       fn = input("Enter Directory Name\n")
+       os.system("mkdir " +fn)
+    if choice == '4':
+       fn = input("Enter Direcory Name\n")       
+       os.system("rmdir " +fn)
+ if x=='d'or x=='D':
+    src = input("Enter Source Name\n")
+    linkname = input("Enter Link Name\n")
+    os.system("ln -s "+src+' '+linkname)    
+ if x =='0':
+    flag =1
+    sys.exit()
+ elif(not flag):
+   print("Invalid Choice\n")
+   flag = 0   
+       
+ 
+
+
+
+
+
+
+    
+   
+
